@@ -1,0 +1,64 @@
+# Project: qualiteDeProg
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Sources/afficheur.o Sources/ecue.o Sources/exportation.o Sources/formation.o Sources/importation.o Sources/matiere.o Sources/semestre.o Sources/stockageDonnees.o Sources/ue.o Sources/uechoix.o Sources/uecompose.o Sources/uesimple.o
+LINKOBJ  = main.o Sources/afficheur.o Sources/ecue.o Sources/exportation.o Sources/formation.o Sources/importation.o Sources/matiere.o Sources/semestre.o Sources/stockageDonnees.o Sources/ue.o Sources/uechoix.o Sources/uecompose.o Sources/uesimple.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = qualiteDeProg.exe
+CXXFLAGS = $(CXXINCS) -std=c++11
+CFLAGS   = $(INCS) -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Sources/afficheur.o: Sources/afficheur.cpp
+	$(CPP) -c Sources/afficheur.cpp -o Sources/afficheur.o $(CXXFLAGS)
+
+Sources/ecue.o: Sources/ecue.cpp
+	$(CPP) -c Sources/ecue.cpp -o Sources/ecue.o $(CXXFLAGS)
+
+Sources/exportation.o: Sources/exportation.cpp
+	$(CPP) -c Sources/exportation.cpp -o Sources/exportation.o $(CXXFLAGS)
+
+Sources/formation.o: Sources/formation.cpp
+	$(CPP) -c Sources/formation.cpp -o Sources/formation.o $(CXXFLAGS)
+
+Sources/importation.o: Sources/importation.cpp
+	$(CPP) -c Sources/importation.cpp -o Sources/importation.o $(CXXFLAGS)
+
+Sources/matiere.o: Sources/matiere.cpp
+	$(CPP) -c Sources/matiere.cpp -o Sources/matiere.o $(CXXFLAGS)
+
+Sources/semestre.o: Sources/semestre.cpp
+	$(CPP) -c Sources/semestre.cpp -o Sources/semestre.o $(CXXFLAGS)
+
+Sources/stockageDonnees.o: Sources/stockageDonnees.cpp
+	$(CPP) -c Sources/stockageDonnees.cpp -o Sources/stockageDonnees.o $(CXXFLAGS)
+
+Sources/ue.o: Sources/ue.cpp
+	$(CPP) -c Sources/ue.cpp -o Sources/ue.o $(CXXFLAGS)
+
+Sources/uechoix.o: Sources/uechoix.cpp
+	$(CPP) -c Sources/uechoix.cpp -o Sources/uechoix.o $(CXXFLAGS)
+
+Sources/uecompose.o: Sources/uecompose.cpp
+	$(CPP) -c Sources/uecompose.cpp -o Sources/uecompose.o $(CXXFLAGS)
+
+Sources/uesimple.o: Sources/uesimple.cpp
+	$(CPP) -c Sources/uesimple.cpp -o Sources/uesimple.o $(CXXFLAGS)
